@@ -21,12 +21,8 @@ export default function Product({
   };
 
   const handleConfirmColor = () => {
-    if (selectedColor) {
-      onAddToCart(id, selectedColor); // Pass the selected color to the cart
-      setIsModalOpen(false); // Close the modal
-    } else {
-      alert("Please select a color before proceeding.");
-    }
+    onAddToCart(id, selectedColor); // Pass the selected color to the cart
+    setIsModalOpen(false); // Close the modal
   };
 
   return (
