@@ -9,7 +9,7 @@ body {
   font-family: 'Comfortaa', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#ffffff, #ffbaba);
+  background: linear-gradient(#ffffff, #ffc1c1);
   min-height: 100vh;
 }
 
@@ -95,6 +95,13 @@ h1 {
   padding: 1rem;
   /* Add padding inside the container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  color: #f9dada;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .product img {
@@ -244,4 +251,38 @@ h1 {
   margin-top: 0.5rem;
   font-size: 1rem;
   color: #333;
+}
+
+.form-title h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+hr {
+  border: 0px solid #ff7070;
+  margin: 2.7rem 0;
+}
+
+.form {
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: #ffeded;
+  font-family: "Comfortaa", sans-serif;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 9rem;
+}
+
+.form-button {
+  margin-top: 1rem;
+  background: #ff4646;
+  font-family: 'Comfortaa', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  color: #201e1a;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
