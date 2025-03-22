@@ -172,10 +172,19 @@ h1 {
 
 .modal-content {
   background: white;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 3rem;
+  /* Increase padding for a thicker appearance */
+  border-radius: 12px;
+  /* Slightly larger border radius */
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Stronger shadow for depth */
+  width: 50%;
+  /* Increase the width of the modal */
+  max-width: 600px;
+  /* Set a maximum width */
+  margin: 0 auto;
+  /* Center the modal horizontally */
 }
 
 .modal-content h2 {

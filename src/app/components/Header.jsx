@@ -4,13 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 
-export default function Header() {
+export default function Header({ cart }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [cart, setCart] = useState([]);
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
+
+  // Calculate the total price of items in the cart
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
     <>
@@ -30,13 +32,30 @@ export default function Header() {
         <div className="modal">
           <div className="modal-content">
             <h2>Your Cart</h2>
-            {cart.length != 0 && (
+            {cart.length > 0 ? (
               <>
-                <p>Total: $0.00</p>
+                {cart.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      background: item.color,
+                      borderRadius: "1rem",
+                      padding: "0.2rem",
+                      margin: "0.1rem",
+                    }}
+                  >
+                    <p>
+                      {item.title} - {item.color} - ${item.price}
+                    </p>
+                  </div>
+                ))}
+                <p>Total: ${totalPrice.toFixed(2)}</p>
                 <button>Purchase</button>
               </>
+            ) : (
+              <p>Your cart is currently empty.</p>
             )}
-            <p>Your cart is currently empty.</p>
+
             <button onClick={toggleModal}>Close</button>
           </div>
         </div>

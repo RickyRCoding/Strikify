@@ -1,7 +1,14 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Product({ id, image, title, price, description }) {
+export default function Product({
+  id,
+  image,
+  title,
+  price,
+  description,
+  setCart,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedColor, setSelectedColor] = useState("#ffffff"); // Track selected color
 
