@@ -1,14 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Product({
-  id,
-  image,
-  title,
-  price,
-  description,
-  onAddToCart,
-}) {
+export default function Product({ id, image, title, price, description }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedColor, setSelectedColor] = useState("#ffffff"); // Track selected color
 
@@ -21,7 +14,14 @@ export default function Product({
   };
 
   const handleConfirmColor = () => {
-    onAddToCart(id, selectedColor); // Pass the selected color to the cart
+    setCart((prev) => [
+      ...prev,
+      {
+        title,
+        price,
+        color: selectedColor,
+      },
+    ]);
     setIsModalOpen(false); // Close the modal
   };
 
@@ -65,7 +65,7 @@ export default function Product({
             >
               Add to cart
             </button>
-            <button onClick={handleCloseModal}>Close</button>
+            <button onClick={handleCloseModal}>Cancel</button>
           </div>
         </div>
       )}

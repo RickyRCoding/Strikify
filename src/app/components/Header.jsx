@@ -1,13 +1,16 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 
 export default function Header() {
-  const modal = useRef();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cart, setCart] = useState([]);
 
-  let modalActions = <button>Close</button>;
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -19,9 +22,25 @@ export default function Header() {
           </h1>
         </div>
         <p>
-          <button>Cart</button>
+          <button onClick={toggleModal}>Cart</button>
         </p>
       </header>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Your Cart</h2>
+            {cart.length != 0 && (
+              <>
+                <p>Total: $0.00</p>
+                <button>Purchase</button>
+              </>
+            )}
+            <p>Your cart is currently empty.</p>
+            <button onClick={toggleModal}>Close</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -182,6 +182,21 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.modal-content button {
+  background: #68a8ed;
+  font-family: 'Comfortaa', sans-serif;
+  padding: 0.5rem 1.5rem;
+  color: #201e1a;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.modal-content button:hover {
+  background: #3d93f0;
+}
+
 .color-options {
   display: flex;
   gap: 1rem;
