@@ -22,7 +22,7 @@ export default function Page() {
     <>
       <nav className="content">
         <h1 className="text" data-text="SHARK TANK SALE - 50% OFF ALL PRODUCTS - SHARK TANK SALE - 50% OFF ALL PRODUCTS - SHARK TANK SALE - 50% OFF ALL PRODUCTS - SHARK TANK SALE - 50% OFF ALL PRODUCTS - SHARK TANK SALE - 50% OFF ALL PRODUCTS">
-          SHARK TANK SALE <span className="empty">-------</span> 50% OFF ALL PRODUCTS <span className="empty">-------</span> NOW OR NEVER
+          SHARK TANK SALE <span className="empty">----</span> 50% OFF ALL PRODUCTS <span className="empty">----</span> NOW OR NEVER
         </h1>
       </nav>
       <Header cart={cart} setCart={setCart} />
